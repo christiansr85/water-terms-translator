@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+
+import Searcher from './components/Searcher';
 
 function App() {
     return (
         <div>
-            Hello, world
+            <Searcher />
         </div>
     )
 }
