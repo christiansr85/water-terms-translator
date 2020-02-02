@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 
+import Results from './Results';
+
 function Searcher() {
+    const texts = {
+        searcherPlaceholder: 'Término',
+        searcherInputSubmit: 'Buscar'
+    };
     const [searchValue, setSearchValue] = useState('');
 
     function handleSearchValue(event) {
@@ -15,12 +21,11 @@ function Searcher() {
     return (
         <div className="searcher-container">
             <form className="searcher-container__searcher" onSubmit={search}>
-                <label>
-                    Name:
-            <input type="text" name="name" value={searchValue} onChange={handleSearchValue} />
-                </label>
-                <input type="submit" value="Submit" />
+                <input type="text" name="search" placeholder={texts.searcherPlaceholder} value={searchValue} onChange={handleSearchValue} />
+                <input type="submit" value={texts.searcherInputSubmit} />
             </form>
+
+            <Results className="searcher-container__results"/>
         </div>
     );
 }

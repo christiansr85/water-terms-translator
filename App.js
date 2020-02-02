@@ -1,11 +1,20 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Searcher from './components/Searcher';
+import SearchView from './pages/SearcherView';
 
 function App() {
     return (
         <div>
-            <Searcher />
+            <Switch>
+                <Route exact path="/">
+                    <SearchView />
+                </Route>
+                
+                <Route path="/search">
+                    <SearchView />
+                </Route>
+            </Switch>
         </div>
     )
 }

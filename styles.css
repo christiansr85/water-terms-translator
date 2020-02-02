@@ -32,13 +32,27 @@ a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
 
+.view {
+    padding: 16px;
+}
+
 .searcher-container {
     display: flex;
+    flex-direction: column;
     height: 100%;
-    justify-content: center;
     align-items: center;
+
+    margin-top: 16px;
 } 
 
 .searcher-container__searcher {
     
+}
+
+.searcher-container__results {
+    margin-top: 16px;
+}
+
+.results-term {
+    display: flex;
 }

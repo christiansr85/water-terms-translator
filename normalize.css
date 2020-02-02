@@ -288,14 +288,6 @@ body {
   [hidden] {
     display: none;
   }
-  input:focus,
-  input.__focus {
-    outline: 4px solid rgba(117, 170, 255, 0.5);
-  }
-  button:focus,
-  button.__focus {
-    outline: 4px solid rgba(117, 170, 255, 0.5);
-  }
   button:active,
   button.__active {
     -ms-transform: scale(0.97);
