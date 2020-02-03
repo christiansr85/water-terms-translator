@@ -7,9 +7,10 @@
 }
 
 html, body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 header {
@@ -42,17 +43,26 @@ a:active { color: var(--light-blue); }
     height: 100%;
     align-items: center;
 
-    margin-top: 16px;
+    width: 60%;
+    margin: 16px auto 0 auto;
 } 
 
 .searcher-container__searcher {
-    
+    flex: 0 0 auto;
 }
 
 .searcher-container__results {
     margin-top: 16px;
+    flex: 0 1 auto;
+    overflow-y: auto;
+    width: 100%;
 }
 
 .results-term {
     display: flex;
+}
+
+.resuts-index,
+.results-term__key {
+    font-weight: bolder;
 }

@@ -4,8 +4,7 @@ import Results from './Results';
 
 function Searcher() {
     const texts = {
-        searcherPlaceholder: 'Término',
-        searcherInputSubmit: 'Buscar'
+        searcherPlaceholder: 'Intorudce término'
     };
     const [searchValue, setSearchValue] = useState('');
 
@@ -14,7 +13,6 @@ function Searcher() {
     }
 
     function search(event) {
-        console.log('typed: ', searchValue);
         event.preventDefault();
     }
 
@@ -22,10 +20,11 @@ function Searcher() {
         <div className="searcher-container">
             <form className="searcher-container__searcher" onSubmit={search}>
                 <input type="text" name="search" placeholder={texts.searcherPlaceholder} value={searchValue} onChange={handleSearchValue} />
-                <input type="submit" value={texts.searcherInputSubmit} />
             </form>
 
-            <Results className="searcher-container__results"/>
+            <div className="searcher-container__results">
+                <Results filter={searchValue}/>            
+            </div>
         </div>
     );
 }
