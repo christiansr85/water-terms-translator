@@ -19,22 +19,25 @@ function Results({filter}) {
         const terms = [];
         let counter = 0;
         for (let key in res) {
-            if (passesFilter(key)) {
-                terms.push(<Term key={counter} keyProp={key} value={res[key]}/>);
+            if (passesFilter(key, res[key])) {
+                terms.push(<Term key={counter} keyProp={key} value={res[key]} highlight={filter}/>);
                 counter++;
             }
         }
         return terms;
     }
 
-    function passesFilter(key) {
+    function passesFilter(key, value) {
         if (!filter || filter === '') {
             return true;
         }
         const filters = filter.toLowerCase().split(' ');
         const keys = key.toLowerCase().split(' ');
+        const values = value.toLowerCase().split(' ');
 
-        return keys.some(item => filters.some(f => item.indexOf(f) !== -1));
+        // Look for the match in both sides
+        return keys.some(item => filters.some(f => item.indexOf(f) !== -1))
+            || values.some(item => filters.some(f => item.indexOf(f) !== -1));
     }
         
     const results = [];
