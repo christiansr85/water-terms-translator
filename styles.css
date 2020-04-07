@@ -34,7 +34,9 @@ a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
 
 .view {
+    box-sizing: border-box;
     padding: 16px;
+    height: 100%;
 }
 
 .searcher-container {
