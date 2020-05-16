@@ -42,14 +42,17 @@ function Results({filter}) {
         
     const results = [];
     for (let key in resources) {
-        results.push(
-            <div key={key}>
-                <div className="resuts-index">{key.toUpperCase()}:</div>
-                <ul>
-                    {getInnerResources(resources[key])}
-                </ul>
-            </div>
-        )
+        const innerResources = getInnerResources(resources[key]);
+        if (innerResources && innerResources.length) {
+            results.push(
+                <div key={key}>
+                    <div className="resuts-index">{key.toUpperCase()}:</div>
+                    <ul>
+                        {innerResources}
+                    </ul>
+                </div>
+            )
+        }
     }
     return (
         <React.Fragment>
